@@ -39,7 +39,7 @@ class AuthController extends Controller
              if(Auth::attempt($credentials)){
                  if($user->area >= 2){
                     if($user->area === 3){
-                        if($request->ip() === '10.10.1.11'){
+                        if($request->ip() === '192.168.10.10'){
                             return self::Redireccion($user);
                         }
                         else{
@@ -53,14 +53,18 @@ class AuthController extends Controller
                     }
                  }
                  else{
-                     if($user->status == false)
-                 {
-                     return redirect('/login')->with('msg','STATUSFALSE');
-                 }
-                 else
-                 {
-                     return redirect('/home')->with('msg','STATUS');
-                 }
+                    if($request->ip() === '192.168.10.10' || $request->ip() === '192.168.10.10' || $request->ip() === '192.168.10.10'){
+                        return redirect('/login')->with('msg','VPN');
+                    }
+                    else{
+                        if($user->status == false){
+                           return redirect('/login')->with('msg','STATUSFALSE');
+                        }
+                        else
+                        {
+                          return redirect('/home')->with('msg','STATUS');
+                        }   
+                    }
                  }
              }
              else
