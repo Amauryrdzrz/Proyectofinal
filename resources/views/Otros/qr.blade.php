@@ -16,7 +16,7 @@
                     <form method="POST" action="{{ route('logeocodigo') }}">
                         @csrf
                             <div class="col-md-6">
-                               <div class="visible-print text-center">
+                               <div class="visible-print text-center" style="width:100%; justify-content:center; align-items:center;">
                                    {!! QrCode::size(250)->generate("$codigo"); !!}
                                </div>
                             </div>
