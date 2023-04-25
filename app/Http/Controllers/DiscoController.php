@@ -228,7 +228,7 @@ class DiscoController extends Controller
            $disco->delete();
 
            return redirect()->route('discos.index')
-                  ->with('success', 'El disco se eliminó correctamente.');
+                  ->with('success', 'Platillo eliminado correctamente.');
          }
 
     }
