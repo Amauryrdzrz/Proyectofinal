@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:10%;">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -9,12 +9,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Discos') }}
+                                Platillos
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar nuevo') }}
+                                  Nuevo Platillo
                                 </a>
                               </div>
                         </div>
@@ -30,13 +30,13 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>Portada</th>
-										<th>Nombre</th>
+                                        <th>Imagen</th>
+										<th>Platillo</th>
+										<th>Nacionalidad</th>
 										<th>Categoria</th>
-										<th>Cantante</th>
 										<th>Precio</th>
-                                        <th>Editar</th>
-                                        <th>Eliminar</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
