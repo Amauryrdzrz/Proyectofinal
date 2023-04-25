@@ -2,22 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-        <div class="row mb-3"></div>
-        <div class="row mb-3"></div>
-        <div class="row mb-3"></div>
-        <div class="row mb-3"></div>
-        <div class="row mb-3"></div>
-        <div class="row mb-3"></div>
-        
-            <div class="card">
-                <div class="card-body">
-                <div class="row mb-3"></div>
-                        </div>
-                        <div class="row mb-3"></div>
-                        <div class="row mb-3"></div>
-                    <form method="POST" action="{{ route('session') }}">
+    <form method="POST" action="{{ route('session') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -56,10 +41,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
