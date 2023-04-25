@@ -94,7 +94,7 @@ class DiscoController extends Controller
         if($disco->save()){
                     // $disco = Disco::create($request->all());
         return redirect('/home')
-               ->with('success', 'Nuevo disco registrado.');
+               ->with('success', 'Platillo registrado.');
         }
         else{
         return redirect('/home')
@@ -161,7 +161,7 @@ class DiscoController extends Controller
              $disco->save();
 
              return redirect()->route('discos.index')
-                    ->with('success', 'El disco se actualizó correctamente.');
+                    ->with('success', 'Platillo actualizado correctamente.');
           }
           else{
              return back()->with('msg', 'NOVALIDO');
@@ -186,7 +186,7 @@ class DiscoController extends Controller
           $disco->save();
         
           return redirect()->route('discos.index')
-                 ->with('success', 'El disco se actualizó correctamente.');
+                 ->with('success', 'Platillo eliminado correctamente.');
         
        }
     }
@@ -217,7 +217,7 @@ class DiscoController extends Controller
                 $disco->delete();
 
                 return redirect()->route('discos.index')
-                       ->with('success', 'El disco se eliminó correctamente.');
+                       ->with('success', 'Platillo eliminado correctamente.');
             }
             else{
                return back()->with('msg', 'NOVALIDO');
