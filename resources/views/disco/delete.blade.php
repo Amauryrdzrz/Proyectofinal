@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $disco->name ?? "{{ __('Show') Disco" }}
+    {{ $disco->name ?? "{{ __('Show') Platillo" }}
 @endsection
 
 @section('content')
@@ -11,22 +11,22 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Disco</span>
+                            <span class="card-title">{{ __('Show') }} Platillos</span>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Nombre:</strong>
+                            <strong>Platillo:</strong>
                             {{ $disco->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Categoria:</strong>
+                            <strong>Nacionalidad:</strong>
                             {{ $disco->categoria }}
                         </div>
                         <div class="form-group">
-                            <strong>Cantante:</strong>
+                            <strong>Categoria:</strong>
                             {{ $disco->cantante }}
                         </div>
                         <div class="form-group">
@@ -39,13 +39,13 @@
 
                             @if (Auth::user()->area < 3)
                                 <label for="archivo">
-                                   Codigo De seguridad
+                                   Codigo para eliminar
                                 </label>
                                 <input type="hidden" value="ELIMINAR" name="accion" codigo="accion">
                                 <input type="number" value="" name="codigoS" id="codigoS" required>
-                                <a href="/solicitud?accion=ELIMINAR"> Solicitar codigo de utilidad... </a>
+                                <a href="/solicitud?accion=ELIMINAR"> Solicitar código </a>
                             @endif
-                            <button type="submit" class="btn btn-primary">Eliminar Disco</button>
+                            <button type="submit" class="btn btn-primary">Eliminar Platillo</button>
                         </form>
                     </div>
                 </div>

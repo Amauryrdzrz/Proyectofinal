@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Ingresar nuevo') }} disco</span>
+                        <span class="card-title">Añadir un nuevo platillo</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('store') }}"  role="form" enctype="multipart/form-data">
@@ -22,15 +22,15 @@
                             <div class="box box-info padding-1">
                                 <div class="box-body"> 
                                         <label for="nombre">
-                                            Nombre
+                                            Platillo
                                         </label>
                                         <input type="text" value="{{$disco->nombre}}" name="nombre" id="nombre" required>
                                         <label for="categoria">
-                                            Categoria
+                                            Nacionalidad
                                         </label>
                                         <input type="text" value="{{$disco->categoria}}" name="categoria" id="categoria" required>
                                         <label for="cantante">
-                                            Cantante
+                                            Categoria
                                         </label>
                                         <input type="text" value="{{$disco->cantante}}" name="cantante" id="cantante" required>
                                         <label for="precio">
@@ -38,7 +38,7 @@
                                         </label>
                                         <input type="text" value="{{$disco->precio}}" name="precio" id="precio" required>
                                         <label for="archivo">
-                                            Archivo
+                                            Imagen
                                         </label>
                                         <input type="file" value="{{$disco->archivo}}" name="image" id="image" required>
                                         <button type="submit" class="btn btn-primary">Agregar</button>
