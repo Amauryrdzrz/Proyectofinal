@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin:0; place-items:center; background-image:url('https://specialspaces.nyc3.digitaloceanspaces.com/upload/low-poly-grid-haikei.png'); height:100%;">
     <form method="POST" action="{{ route('session') }}">
                         @csrf
-
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo electronico') }}</label>
 
