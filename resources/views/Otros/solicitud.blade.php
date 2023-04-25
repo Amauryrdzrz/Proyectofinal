@@ -14,7 +14,6 @@
              <div class="box">
              <form class="form" method="POST" action="{{route('respondersolicitud')}}">
                     @csrf
-                    <img src="/Image/Xent logo.png" alt="">
                     <div class="email">
                          <center>El usuario <b>{{$username}}</b> está solicitando un codigo para <b>{{$utilidad}}</b> un registro</center>
                          <br>
