@@ -6,8 +6,12 @@
 <<<<<<< HEAD
         'reference' => '2fa16b1176b574facbe9df07939cec424b70d2ef',
 =======
+<<<<<<< HEAD
+        'reference' => '2fa16b1176b574facbe9df07939cec424b70d2ef',
+=======
         'reference' => '037d1f45a6cc8d338b8352e91520f3aeaab721b7',
 >>>>>>> 28ec9f01a234daad62e1207fd7d9fa8b94b60752
+>>>>>>> ddc0e88fc23e74c3e58ccd3fb499f8ec08d9593a
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -500,8 +504,12 @@
 <<<<<<< HEAD
             'reference' => '2fa16b1176b574facbe9df07939cec424b70d2ef',
 =======
+<<<<<<< HEAD
+            'reference' => '2fa16b1176b574facbe9df07939cec424b70d2ef',
+=======
             'reference' => '037d1f45a6cc8d338b8352e91520f3aeaab721b7',
 >>>>>>> 28ec9f01a234daad62e1207fd7d9fa8b94b60752
+>>>>>>> ddc0e88fc23e74c3e58ccd3fb499f8ec08d9593a
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
