@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body style="animation: pan 6s infinite alternate linear; margin:0; place-items:center; background-image:url('https://specialspaces.nyc3.digitaloceanspaces.com/upload/low-poly-grid-haikei.png'); height:100%; width:100%">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -38,9 +38,9 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                                <!-- <li class="nav-item">
+                                    <p class="nav-link">Bienvenido</p>
+                                </li> -->
                             @endif
                         @else
                         <!-- <li class="nav-item">
