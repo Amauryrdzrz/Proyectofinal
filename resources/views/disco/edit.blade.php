@@ -19,7 +19,7 @@
 
                       <div class="row">
                         <div class="col-md-5"></div>
-                        <div class="col-md-2"><img width=20% height=20% src="{{$disco->archivo}}"></div>
+                        <div class="col-md-2"><img width=60% height=60% src="{{$disco->archivo}}"></div>
                         <div class="col-md-5"></div>
                       </div>
                       <br>
