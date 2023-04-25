@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Platillos</span>
+                            <span class="card-title">Eliminar Platillo</span>
                         </div>
                     </div>
 
@@ -43,9 +43,13 @@
                                 </label>
                                 <input type="hidden" value="ELIMINAR" name="accion" codigo="accion">
                                 <input type="number" value="" name="codigoS" id="codigoS" required>
-                                <a href="/solicitud?accion=ELIMINAR"> Solicitar código </a>
+                                <div>
+                                    <button href="/solicitud?accion=ELIMINAR" class="btn btn-primary"> Solicitar código </button>
+                                </div>
                             @endif
+                            <div>
                             <button type="submit" class="btn btn-primary">Eliminar Platillo</button>
+                            </div>
                         </form>
                     </div>
                 </div>

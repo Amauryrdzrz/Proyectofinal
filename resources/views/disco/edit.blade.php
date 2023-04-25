@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Disco</span>
+                        <span class="card-title">Actualizar Platillo</span>
                     </div>
                     <div class="card-body">
 
