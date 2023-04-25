@@ -14,12 +14,6 @@
             <div class="card">
                 <div class="card-body">
                 <div class="row mb-3"></div>
-                        <div class="row mb-3"></div>
-                        <div class="row mb-3">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Faf%2FSquare_Enix_logo.svg%2F2560px-Square_Enix_logo.svg.png&f=1&nofb=1&ipt=510f7cb67c4dbb07eaf36e2169a4d10423cefad55131305750c7b13e6158e341&ipo=images"
-                                 alt="" style="height:256; width:256px"></div>
-                            <div class="col-md-4"></div>
                         </div>
                         <div class="row mb-3"></div>
                         <div class="row mb-3"></div>
@@ -57,7 +51,7 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Iniciar Sesion') }}
+                                    Iniciar Sesión
                                 </button>
                             </div>
                         </div>
