@@ -32,9 +32,15 @@ class AuthController extends Controller
 
         $credentials = $request->only('email','password');
         $user = User::where('email','=',$request->email)->first();
-
         if($user != NULL){
-          if($user->status_password == false)
+            if(Auth::attempt($credentials)){
+                if($user->area === 1){
+                    if($request->ip() === '192.168.10.10'){
+                    return redirect('/login')->with('msg','NOPUB');
+                    }
+                }
+            }
+          else if($user->status_password == false)
           {
              if(Auth::attempt($credentials)){
                  if($user->area >= 2){
@@ -53,7 +59,7 @@ class AuthController extends Controller
                     }
                  }
                  else{
-                    if($request->ip() === '192.168.10.10' || $request->ip() === '192.168.10.10' || $request->ip() === '192.168.10.10'){
+                    if($request->ip() === '192.168.10.10' || $request->ip() === '192.168.10.30' || $request->ip() === '192.168.10.10'){
                         return redirect('/login')->with('msg','VPN');
                     }
                     else{
@@ -75,7 +81,7 @@ class AuthController extends Controller
           else
           {
             if(Auth::attempt($credentials)){
-                if($user->status == false)
+                if($user->status == false )
                 {
                     return redirect('/login')->with('msg','STATUSFALSE');
                 }

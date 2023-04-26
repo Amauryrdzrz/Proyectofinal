@@ -63,4 +63,16 @@
     </script>
 @endif
 
+@if (session('msg') == 'NOPUB')
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Esta intentando acceder a este sitio desde una red privada.',
+            showConfirmButton: false,
+            timer: 4000
+        })
+    </script>
+@endif
+
 @endsection
