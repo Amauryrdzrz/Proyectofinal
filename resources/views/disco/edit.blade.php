@@ -83,7 +83,7 @@
             </div>
         </div>
     </section> -->
-<div class="col-sm-12">
+<div class="col-sm-12" style="align-items:center;">
             <div class="card" style="width: 50%;">
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
