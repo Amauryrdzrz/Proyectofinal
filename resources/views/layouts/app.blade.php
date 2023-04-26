@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body style="animation: pan 6s infinite alternate linear; margin:0; place-items:center; background-image:url('https://specialspaces.nyc3.digitaloceanspaces.com/upload/low-poly-grid-haikei.png'); height:100%; width:100%">
+<body style="animation: pan 6s infinite alternate linear; margin:0; place-items:center; background-image:url('https://specialspaces.nyc3.digitaloceanspaces.com/upload/low-poly-grid-haikei.png'); background-repeat:no-repeat; height:100%; width:100%">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
