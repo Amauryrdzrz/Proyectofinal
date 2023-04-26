@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <div class="card">
                             @foreach ($discos as $disco)
-                            <img class="card-img-top" width=50% heigh=50% src="{{ $disco->archivo }}" alt="Card image cap">
+                            <img class="card-img-top" style="width:20%; height:20%;" src="{{ $disco->archivo }}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Nombre: {{$disco->nombre}}</h5>
                                 <p class="card-text">Nacionalidad: {{$disco->categoria}}**</p>
