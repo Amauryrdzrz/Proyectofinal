@@ -49,48 +49,6 @@
                             </div>
                         </div>
                         @endforeach
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>Imagen</th>
-										<th>Platillo</th>
-										<th>Nacionalidad</th>
-										<th>Categoria</th>
-										<th>Precio</th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($discos as $disco)
-                                        <tr>
-                                            <td><img src="{{ $disco->archivo }}" width=50 height=50></td>
-											<td>{{ $disco->nombre }}</td>
-											<td>{{ $disco->categoria }}</td>
-											<td>{{ $disco->cantante }}</td>
-											<td>{{ $disco->precio }}</td>
-
-                                            <td>
-                                                <form action="{{ route('edit',$disco->id) }}" method="GET">
-                                                    @csrf
-                                                    @method('GET')
-                                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-fw fa-edit"></i>Editar</button>
-                                                </form>
-                                            </td>
-
-                                            <td>
-                                               <form action="{{ route('delete',$disco->id)}}" method="GET">
-                                                  @csrf
-                                                  @method('GET')
-                                                  <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
-                                               </form>                                       
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
                 {!! $discos->links() !!}
