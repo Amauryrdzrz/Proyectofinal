@@ -34,6 +34,7 @@
                                 <p class="card-text">Nacionalidad: {{$disco->categoria}}**</p>
                                 <p class="card-text">Categoria: {{$disco->cantante}}**</p>
                                 <p class="card-text">Precio: ${{$disco->precio}}</p>
+                                <div style="display:flex; flex-direction:row;">
                                 <form action="{{ route('edit',$disco->id) }}" method="GET">
                                     @csrf
                                     @method('GET')
@@ -44,6 +45,7 @@
                                     @method('GET')
                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
                                 </form>
+                                </div>
                             </div>
                         </div>
                         @endforeach
