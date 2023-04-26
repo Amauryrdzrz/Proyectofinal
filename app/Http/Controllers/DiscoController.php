@@ -160,7 +160,7 @@ class DiscoController extends Controller
 
              $disco->save();
 
-             return redirect()->route('discos.index')
+             return redirect()->route('/home')
                     ->with('success', 'Platillo actualizado correctamente.');
           }
           else{
@@ -185,7 +185,7 @@ class DiscoController extends Controller
                 
           $disco->save();
         
-          return redirect()->route('discos.index')
+          return redirect()->route('/home')
                  ->with('success', 'Platillo eliminado correctamente.');
         
        }
