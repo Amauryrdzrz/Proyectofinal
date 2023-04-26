@@ -34,8 +34,8 @@
     </div>
 </div> -->
 <div class="row">
-    <div class="col-sm-6">
         @foreach ($discos as $disco)
+        <div class="col-sm-6">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{{ $disco->archivo }}" alt="Card image cap">
             <div class="card-body">
@@ -58,6 +58,6 @@
             </div>
         </div>
     </div>
+    @endforeach
 </div>
-@endforeach
 @endsection
