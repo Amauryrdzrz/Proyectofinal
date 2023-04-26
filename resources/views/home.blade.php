@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-<div class="row" style="display:flex; flex-direction: column; padding:10px; margin:1vw; justify-content: space-evenly;">
+<div class="row" style="display:flex; flex-direction: row; padding:10px; margin:1vw;">
     @foreach ($discos as $disco)
         <div class="col-sm-2">
             <div class="card" style="width: 18rem;">
