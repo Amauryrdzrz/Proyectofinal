@@ -33,20 +33,13 @@ class AuthController extends Controller
         $credentials = $request->only('email','password');
         $user = User::where('email','=',$request->email)->first();
         if($user != NULL){
-            if(Auth::attempt($credentials)){
-                if($user->area === 3){
-                    if($request->ip() === '192.168.10.10'){
-                    return redirect('/login')->with('msg','NOPUB');
-                    }
-                }
-            }
-          else if($user->status_password == false)
+          if($user->status_password == false)
           {
              if(Auth::attempt($credentials)){
                  if($user->area >= 2){
                     if($user->area === 3){
                         if($request->ip() === '192.168.10.10'){
-                            return self::Redireccion($user);
+                            return redirect('/login')->with('msg','NOPUB');
                         }
                         else{
                             Session::flush();
@@ -81,7 +74,7 @@ class AuthController extends Controller
           else
           {
             if(Auth::attempt($credentials)){
-                if($user->status == false )
+                if($user->status == false)
                 {
                     return redirect('/login')->with('msg','STATUSFALSE');
                 }
