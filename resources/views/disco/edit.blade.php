@@ -8,9 +8,7 @@
     <section class="content container-fluid">
         <div class="">
             <div class="col-md-12">
-
                 @includeif('partials.errors')
-
                 <div class="card card-default">
                     <div class="card-header">
                         <span class="card-title">Actualizar Platillo</span>
@@ -22,8 +20,6 @@
                         <div class="col-md-2"><img width=60% height=60% src="{{$disco->archivo}}"></div>
                         <div class="col-md-5"></div>
                       </div>
-                      <br>
-                      <br>
                       <form  method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
                          @csrf
                          @method('PUT')
@@ -87,7 +83,30 @@
             </div>
         </div>
     </section>
-
+<div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre: {{$disco->nombre}}</h5>
+                    <p class="card-text">Nacionalidad: {{$disco->categoria}}**</p>
+                    <p class="card-text">Categoria: {{$disco->cantante}}**</p>
+                    <p class="card-text">Precio: ${{$disco->precio}}</p>
+                    <div style="display:flex; flex-direction:row;">
+                        <form action="{{ route('edit',$disco->id) }}" method="GET">
+                            @csrf
+                            @method('GET')
+                            <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-fw fa-edit"></i>Editar</button>
+                        </form>
+                        <form action="{{ route('delete',$disco->id)}}" method="GET">
+                            @csrf
+                            @method('GET')
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     <!-- <form method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
                             @csrf
                             @method('PUT')

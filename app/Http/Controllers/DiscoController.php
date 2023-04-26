@@ -209,14 +209,14 @@ class DiscoController extends Controller
 
     public function eliminarDisco($id, Request $request){
 
-        if(Auth::user()->area < 2){
+        if(Auth::user()->area <= 2){
             $codigoS = $request->codigoS;
   
             if(self::ValidaCodigoUtilidad($codigoS) === true){
                 $disco = Disco::findOrFail($id);
                 $disco->delete();
 
-                return redirect()->route('discos.index')
+                return redirect()->route('/home')
                        ->with('success', 'Platillo eliminado correctamente.');
             }
             else{
@@ -227,7 +227,7 @@ class DiscoController extends Controller
             $disco = Disco::findOrFail($id);
            $disco->delete();
 
-           return redirect()->route('discos.index')
+           return redirect()->route('/home')
                   ->with('success', 'Platillo eliminado correctamente.');
          }
 
