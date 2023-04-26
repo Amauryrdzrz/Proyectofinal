@@ -85,7 +85,7 @@
     </section> -->
 
 <div class="col-sm-12">
-            <div class="card" style="left:25vw; width: 50%;">
+            <div class="card" style="left:25vw; width: 50%; align-items:center; justify-content:center;">
               <h1>Editar Platillo</h1>
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
