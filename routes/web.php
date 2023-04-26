@@ -101,9 +101,9 @@ Route::middleware(['valid'])->group(function () {
     });
 
 
-    Route::resource('discos', DiscoController::class);
+    Route::resource('platillo', DiscoController::class);
 
-    Route::prefix('discos')->group(function () {
+    Route::prefix('platillo')->group(function () {
         Route::get('edit/{id}',[DiscoController::class,'edit'])->name('edit');
         Route::put('update/{id}',[DiscoController::class,'update'])->name('update');
         Route::get('delete/{id}',[DiscoController::class,'delete'])->name('delete');
