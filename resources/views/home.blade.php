@@ -59,7 +59,6 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-1"></div>
     @endforeach
 </div>
 @endsection
