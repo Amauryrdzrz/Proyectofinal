@@ -46,6 +46,7 @@
                                 </form>
                             </div>
                         </div>
+                        @endforeach
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
