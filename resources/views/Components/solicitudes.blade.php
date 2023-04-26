@@ -8,14 +8,14 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"><center><h1>Listado de solicitudes</h1></center></div>
-            <div class="col-sm-4"></div>
+            
+            
         </div>
         <div class="row"></div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
+                    <div class="col-sm-4"><center><h1>Listado de solicitudes</h1></center></div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
