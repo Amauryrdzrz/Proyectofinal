@@ -26,6 +26,26 @@
                     @endif
 
                     <div class="card-body">
+                        <div class="card">
+                            @foreach ($discos as $disco)
+                            <img class="card-img-top" src="{{ $disco->archivo }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">**{{$disco->nombre}}**</h5>
+                                <p class="card-text">**{{$disco->categoria}}**</p>
+                                <p class="card-text">**{{$disco->cantante}}**</p>
+                                <p class="card-text">**{{$disco->precio}}**</p>
+                                <form action="{{ route('edit',$disco->id) }}" method="GET">
+                                    @csrf
+                                    @method('GET')
+                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-fw fa-edit"></i>Editar</button>
+                                </form>
+                                <form action="{{ route('delete',$disco->id)}}" method="GET">
+                                    @csrf
+                                    @method('GET')
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
+                                </form>
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
