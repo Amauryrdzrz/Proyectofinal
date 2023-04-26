@@ -160,7 +160,7 @@ class DiscoController extends Controller
 
              $disco->save();
 
-             return redirect()->route('/home')
+             return redirect()->route('home')
                     ->with('success', 'Platillo actualizado correctamente.');
           }
           else{
@@ -185,7 +185,7 @@ class DiscoController extends Controller
                 
           $disco->save();
         
-          return redirect()->route('/home')
+          return redirect()->route('home')
                  ->with('success', 'Platillo eliminado correctamente.');
         
        }
@@ -227,7 +227,7 @@ class DiscoController extends Controller
             $disco = Disco::findOrFail($id);
            $disco->delete();
 
-           return redirect()->route('/home')
+           return redirect()->route('home')
                   ->with('success', 'Platillo eliminado correctamente.');
          }
 
