@@ -34,8 +34,8 @@
     </div>
 </div>
 <div class="row">
-        @foreach ($discos as $disco)
         <div class="col-sm-2" style="justify-content: space-evenly;">
+            @foreach ($discos as $disco)
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
