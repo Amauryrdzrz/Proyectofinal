@@ -91,7 +91,7 @@
               </div>
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
-                    <form  method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
+                    <form  method="POST" action="{{ route('update', $disco->id) }}"  enctype="multipart/form-data">
                          @csrf
                          @method('PUT')
                         <div class="row">
