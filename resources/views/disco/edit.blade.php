@@ -84,7 +84,7 @@
         </div>
     </section>
 <div class="col-sm-2">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 50%;">
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
                     <form  method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
