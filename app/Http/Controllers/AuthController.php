@@ -39,7 +39,7 @@ class AuthController extends Controller
                  if($user->area >= 2){
                     if($user->area === 3){
                         if($request->ip() === '192.168.10.10'){
-                            return redirect('/login')->with('msg','NOPUB');
+                            return self::Redireccion($user);
                         }
                         else{
                             Session::flush();
@@ -53,6 +53,8 @@ class AuthController extends Controller
                  }
                  else{
                     if($request->ip() === '192.168.10.10' || $request->ip() === '192.168.10.30' || $request->ip() === '192.168.10.10'){
+                        Session::flush();
+                        Auth::logout();
                         return redirect('/login')->with('msg','VPN');
                     }
                     else{
