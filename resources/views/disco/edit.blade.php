@@ -87,26 +87,68 @@
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Nombre: {{$disco->nombre}}</h5>
-                    <p class="card-text">Nacionalidad: {{$disco->categoria}}**</p>
-                    <p class="card-text">Categoria: {{$disco->cantante}}**</p>
-                    <p class="card-text">Precio: ${{$disco->precio}}</p>
-                    <div style="display:flex; flex-direction:row;">
-                        <form action="{{ route('edit',$disco->id) }}" method="GET">
-                            @csrf
-                            @method('GET')
-                            <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-fw fa-edit"></i>Editar</button>
-                        </form>
-                        <form action="{{ route('delete',$disco->id)}}" method="GET">
-                            @csrf
-                            @method('GET')
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
-                        </form>
+                    <form  method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
+                         @csrf
+                         @method('PUT')
+                        <div class="row">
+                          <div class="col-md-3"></div>
+                          <div class="form-group col-md-4">
+                            <label for="nombre">Platillo</label>
+                            <input type="text" value="{{$disco->nombre}}" name="nombre" id="nombre" class="form-control" required>
+                          </div>
+
+                          <div class="form-group col-md-2">
+                            <label for="categoria">Nacionalidad</label>
+                            <input value="{{$disco->categoria}}" name="categoria" id="categoria" class="form-control" required>
+                          </div>
+                          <div class="col-md-3"></div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-3"></div>
+                            <div class="form-group col-md-3">
+                              <label for="cantante">Categoria</label>
+                              <input type="text"  value="{{$disco->cantante}}" name="cantante" id="cantante" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label for="precio">Precio</label>
+                              <input type="text" class="form-control" value="{{$disco->precio}}" name="precio" id="precio" required>
+                            </div>
+                          <div class="col-md-4"></div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="col-md-3"></div>
+                          <div class="form-group col-md -4">
+                            <label for="image">Imagen descriptiva</label>
+                            <input type="file" value="{{$disco->archivo}}" name="image" id="image" class="form-control" required>
+                          </div>
+                          <div class="col-md-3"></div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                          <div class="col-md-3"></div>
+                             @if (Auth::user()->area == 1)
+                                <div class="form-group col-md -4">
+                                  <label for="codigoS">Código para editar.</label>
+                                  <input type="number" value="" name="codigoS" id="codigoS" class="form-control" required>
+                                  <a href="/solicitud?accion=EDITAR">Solicitar Código </a>
+                                </div>
+                            @endif
+                            <div class="form-group col-md-2">
+                            <br>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                            </div>
+                          <div class="col-md-4"></div>
+                        </div>
+
+                      </form>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     <!-- <form method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
