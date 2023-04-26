@@ -63,7 +63,7 @@
     </script>
 @endif
 
-@if (session('msg') == 'NOPUB')
+@if (session('msg') == 'VPN')
     <script type="text/javascript">
         Swal.fire({
             position: 'center',
