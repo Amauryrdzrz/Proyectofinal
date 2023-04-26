@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div class="container-fluid" style="margin-top:10%;">
+<div class="container-fluid" style="margin-top:10%;">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <div class="row">
         @foreach ($discos as $disco)
         <div class="col-sm-6">
