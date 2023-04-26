@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <!-- <section class="content container-fluid">
         <div class="">
             <div class="col-md-12">
                 @includeif('partials.errors')
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 <div class="col-sm-2">
             <div class="card" style="width: 50%;">
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
