@@ -33,6 +33,7 @@
         </div>
     </div>
 </div> -->
+<div class="container">
     @foreach ($discos as $disco)
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{ $disco->archivo }}" alt="Card image cap">
@@ -55,5 +56,6 @@
             </div>
         </div>
     </div>
+</div>
 @endforeach
 @endsection
