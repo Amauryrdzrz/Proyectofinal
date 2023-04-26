@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<div class="row">
+<div style="display:flex; flex-direction:row; padding:5%;">
     @foreach ($discos as $disco)
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" style="width:20%; height:20%;" src="{{ $disco->archivo }}" alt="Card image cap">
