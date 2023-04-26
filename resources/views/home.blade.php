@@ -33,6 +33,7 @@
         </div>
     </div>
 </div>
+<div style="display:flex; flex-direction:row; margin:5%;">
             <div class="card" style="width: 18rem;">
                 @foreach ($discos as $disco)
                     <img class="card-img-top" style="width:20%; height:20%;" src="{{ $disco->archivo }}" alt="Card image cap">
@@ -52,6 +53,7 @@
                                 @method('GET')
                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
                             </form>
+                        </div>
                         </div>
                         </div>
                         @endforeach
