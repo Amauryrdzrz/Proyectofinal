@@ -186,7 +186,7 @@ class DiscoController extends Controller
           $disco->save();
         
           return redirect()->route('home')
-                 ->with('success', 'Platillo eliminado correctamente.');
+                 ->with('success', 'Platillo editado correctamente.');
         
        }
     }
