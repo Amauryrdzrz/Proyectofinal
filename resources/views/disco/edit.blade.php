@@ -96,16 +96,12 @@
                          @method('PUT')
                         <div class="row">
                           <div class="col-md-3"></div>
-                          <div class="form-group col-md-4">
+                          <div class="form-group col-md-3">
                             <label for="nombre">Platillo</label>
                             <input type="text" value="{{$disco->nombre}}" name="nombre" id="nombre" class="form-control" required>
-                          </div>
-
-                          <div class="form-group col-md-2">
                             <label for="categoria">Nacionalidad</label>
                             <input value="{{$disco->categoria}}" name="categoria" id="categoria" class="form-control" required>
                           </div>
-                          <div class="col-md-3"></div>
                         </div>
 
                         <div class="row">
@@ -113,10 +109,11 @@
                             <div class="form-group col-md-3">
                               <label for="cantante">Categoria</label>
                               <input type="text"  value="{{$disco->cantante}}" name="cantante" id="cantante" class="form-control" required>
+                               <label for="precio">Precio</label>
+                              <input type="text" class="form-control" value="{{$disco->precio}}" name="precio" id="precio" required>
                             </div>
                             <div class="form-group col-md-2">
-                              <label for="precio">Precio</label>
-                              <input type="text" class="form-control" value="{{$disco->precio}}" name="precio" id="precio" required>
+                             
                             </div>
                           <div class="col-md-4"></div>
                         </div>
