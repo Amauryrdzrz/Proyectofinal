@@ -34,7 +34,7 @@ class AuthController extends Controller
         $user = User::where('email','=',$request->email)->first();
         if($user != NULL){
             if(Auth::attempt($credentials)){
-                if($user->area === 1){
+                if($user->area === 3){
                     if($request->ip() === '192.168.10.10'){
                     return redirect('/login')->with('msg','NOPUB');
                     }
