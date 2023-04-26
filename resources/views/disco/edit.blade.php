@@ -85,8 +85,10 @@
     </section> -->
 
 <div class="col-sm-12">
-            <div class="card" style="left:25vw; width: 50%; align-items:center; justify-content:center;">
-              <h1>Editar Platillo</h1>
+            <div class="card" style="left:25vw; width: 50%;">
+              <div class="card-title" style="align-items:center; justify-content:center;">
+                <h1>Editar Platillo</h1>
+              </div>
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
                     <form  method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
