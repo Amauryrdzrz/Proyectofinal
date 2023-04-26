@@ -83,9 +83,9 @@
             </div>
         </div>
     </section> -->
-<div style="height:100%; width:100%; display:grid; place-items:center;">
+
 <div class="col-sm-12">
-            <div class="card" style="width: 50%;">
+            <div class="card" style="width: 100%;">
                 <img class="card-img-top" height=200px width=200px src="{{ $disco->archivo }}" alt="Card image cap">
                 <div class="card-body">
                     <form  method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
@@ -149,7 +149,6 @@
                 </div>
             </div>
         </div>
-      </div>
 
     <!-- <form method="POST" action="{{ route('discos.update', $disco->id) }}"  enctype="multipart/form-data">
                             @csrf
