@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             'name' => 'Supervisor',
             'lastname' => 'Riesco',
             'branchoffice' => 'Torreón',
-            'email' => 'jaredriesco25@outlook.com',
+            'email' => 'amauryrdzrz@gmail.com',
             'password' => bcrypt('admin'),
             'area' => 2
         ]);
