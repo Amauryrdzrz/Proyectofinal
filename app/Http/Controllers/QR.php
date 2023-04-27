@@ -70,7 +70,5 @@ class QR extends Controller
         //     }
         // }
         event(new NewMessage('Bienvenido Usuario'));
-        return response()
-        ->json(['respuesta' => "Escaneo completado, ahora puede cerrar la APP."]);
     }
 }
