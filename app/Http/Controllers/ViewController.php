@@ -45,6 +45,7 @@ class ViewController extends Controller
     {
         
         if(Auth::user()->area == 2){
+            return $request->ip();
             if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30'){
             return back()->with('msg','NOVPN');
         }else{
