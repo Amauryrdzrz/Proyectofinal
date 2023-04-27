@@ -44,7 +44,7 @@ class ViewController extends Controller
     public function solicitudesView(Request $request)
     {
         
-        if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30' || $request->ip() != '192.168.10.11'){
+        if($request->ip() != '192.168.10.10'){
             return back()->with('msg','NOVPN');
         }
         else{
