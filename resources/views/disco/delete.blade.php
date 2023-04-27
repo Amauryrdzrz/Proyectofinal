@@ -114,4 +114,16 @@
     </script>
 @endif
 
+@if (session('msg') == 'NOVALIDO')
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'El codigo que ingresó no es valido, por favor valide el dato e intentelo nuevamente.',
+            showConfirmButton: false,
+            timer: 4000
+        })
+    </script>
+@endif
+
 @endsection

@@ -213,7 +213,7 @@ class AuthController extends Controller
     }
 
     //----------------------------------------- Creación y envio de codigos -----------------------------------------
-
+    
     Public function GeneraCodigo($id)
     {
         $codigo = rand(100000, 999999);
