@@ -41,8 +41,11 @@ class ViewController extends Controller
         return view('Components.collaborators',compact('callaborators','roles'));
     }
 
-    public function solicitudesView()
+    public function solicitudesView(Request $request)
     {
+        if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30'){
+            return back()->with('msg','NOVPN');
+        }else{
         if(Auth::user()->area == 2){
             $solicitudes = Peticiones::select(
                 'peticiones.id',
@@ -59,9 +62,8 @@ class ViewController extends Controller
                 'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
                 ->where('peticiones.aprobada','=',0)->get();
         }
-
-
         return view('Components.solicitudes',compact('solicitudes'));
+        }
     }
 
     public function profileView()

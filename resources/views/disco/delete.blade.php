@@ -54,6 +54,18 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+@if (session('msg') == 'NOVPN')
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Esta intentando acceder a este modulo desde una red insegura, por favor utilice su VPN.',
+            showConfirmButton: false,
+            timer: 4000
+        })
+    </script>
+@endif
+
 @if (session('msg') == 'OK')
     <script type="text/javascript">
         Swal.fire({

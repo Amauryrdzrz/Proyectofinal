@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('template_title')
     Disco
@@ -77,4 +77,4 @@
         </div>
     </div>
 
-@endsection
+@endsection -->
