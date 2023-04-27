@@ -33,7 +33,7 @@
 <script>
         Pusher.logToConsole = true;
 
-        var pusher = new Pusher('44285c892edabb7d1cdf', {
+        var pusher = new Pusher('3e466fdd6d6287696201', {
         cluster: 'us2'
         });
 
