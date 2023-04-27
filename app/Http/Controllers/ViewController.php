@@ -44,27 +44,32 @@ class ViewController extends Controller
     public function solicitudesView(Request $request)
     {
         
-        if(Auth::user()->area == 2){
-            return $request->ip();
-            if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30'){
+        if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30' || $request->ip() != '192.168.10.11'){
             return back()->with('msg','NOVPN');
-        }else{
-            $solicitudes = Peticiones::select(
-                'peticiones.id',
-                'users.name',
-                'accion',
-                'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
-                ->where('peticiones.aprobada','=',0)->where('peticiones.accion', '=', 'EDITAR')->get();
         }
-        // else{
-        //     $solicitudes = Peticiones::select(
-        //         'peticiones.id',
-        //         'users.name',
-        //         'accion',
-        //         'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
-        //         ->where('peticiones.aprobada','=',0)->get();
-        // }
-        return view('Components.solicitudes',compact('solicitudes'));
+        else{
+            if(Auth::user()->area === 1){
+                return back();
+            }
+            if(Auth::user()->area == 2){
+                $solicitudes = Peticiones::select(
+                    'peticiones.id',
+                    'users.name',
+                    'accion',
+                    'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
+                    ->where('peticiones.aprobada','=',0)->where('peticiones.accion', '=', 'EDITAR')->get();
+            }
+            else{
+                $solicitudes = Peticiones::select(
+                    'peticiones.id',
+                    'users.name',
+                    'accion',
+                    'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
+                    ->where('peticiones.aprobada','=',0)->get();
+            }
+    
+    
+            return view('Components.solicitudes',compact('solicitudes'));
         }
     }
 
