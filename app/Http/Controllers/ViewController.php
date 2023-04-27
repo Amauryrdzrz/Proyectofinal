@@ -43,10 +43,11 @@ class ViewController extends Controller
 
     public function solicitudesView(Request $request)
     {
-        if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30'){
+        
+        if(Auth::user()->area == 2){
+            if($request->ip() != '192.168.10.10' || $request->ip() != '192.168.10.30'){
             return back()->with('msg','NOVPN');
         }else{
-        if(Auth::user()->area == 2){
             $solicitudes = Peticiones::select(
                 'peticiones.id',
                 'users.name',
@@ -54,14 +55,14 @@ class ViewController extends Controller
                 'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
                 ->where('peticiones.aprobada','=',0)->where('peticiones.accion', '=', 'EDITAR')->get();
         }
-        else{
-            $solicitudes = Peticiones::select(
-                'peticiones.id',
-                'users.name',
-                'accion',
-                'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
-                ->where('peticiones.aprobada','=',0)->get();
-        }
+        // else{
+        //     $solicitudes = Peticiones::select(
+        //         'peticiones.id',
+        //         'users.name',
+        //         'accion',
+        //         'fechasolicita')->join('users','users.id','=','peticiones.usuario_id')
+        //         ->where('peticiones.aprobada','=',0)->get();
+        // }
         return view('Components.solicitudes',compact('solicitudes'));
         }
     }
