@@ -388,7 +388,7 @@ class AuthController extends Controller
                 $utilidad = 'ACTUALIZAR';
             }
             $URL = URL::temporarySignedRoute('vcodigoutilidad', now()->addMinutes(5), ['codigo' => $codigo, 'utilidad' => $utilidad]);
-            $continue = self::enviacodigoutiulidad($usuario->email, $URL, $utilidad);
+            $continue = self::enviacodigoutiulidad($usuario->email, $codigo, $utilidad);
             if($continue == true){
                 return redirect()->back();
             }
