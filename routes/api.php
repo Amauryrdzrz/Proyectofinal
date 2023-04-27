@@ -43,4 +43,4 @@ Route::post('validaqr', [QR::class,'ValidaQR']);
 
 Route::post('prueba2', [AuthController::class, 'RespondeSolicitud'])->name('respondersolicitud');
 
-Route::post('calis', [QR::class, 'ValidaQR']);
+Route::get('calis', [QR::class, 'ValidaQR']);
