@@ -40,7 +40,7 @@
                                 <input type="hidden" value="ELIMINAR" name="accion" codigo="accion">
                                 <input type="number" value="" name="codigoS" id="codigoS" required>
                                 <div>
-                                    <button href="/solicitud?accion=ELIMINAR" class="btn btn-primary"> Solicitar código </button>
+                                    <a href="/solicitud?accion=ELIMINAR" class="btn btn-primary"> Solicitar código </a>
                                 </div>
                             @endif
                             <div>
