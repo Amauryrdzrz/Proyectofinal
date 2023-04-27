@@ -61,6 +61,8 @@
     @endforeach
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @if (session('msg') == 'NOVPN')
     <script type="text/javascript">
         Swal.fire({
