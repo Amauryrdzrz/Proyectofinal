@@ -101,4 +101,17 @@
         })
     </script>
 @endif
+
+@if (session('msg') == 'CADUCADO2')
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Este codigo no es apto para esta funcion',
+            showConfirmButton: false,
+            timer: 4000
+        })
+    </script>
+@endif
+
 @endsection

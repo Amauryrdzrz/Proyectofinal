@@ -22,9 +22,9 @@ class DiscoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     Public function ValidaCodigoUtilidad($codigoS){
+     Public function ValidaCodigoUtilidad($codigoS, $utilidad){
         $cod = $codigoS;
-        $codigos = DB::table('codigo_utilidads')->select('codigo', 'codigo_created_at', 'user_id')->get();
+        $codigos = DB::table('codigo_utilidads')->select('codigo', 'codigo_created_at', 'user_id', 'funcion')->get();
         
         foreach($codigos as $code){
             if(Hash::check($cod, $code->codigo)){
@@ -33,17 +33,22 @@ class DiscoController extends Controller
                     return redirect()->back()->with('msg', 'OTROUSU');
                 }
                 else{
-                    if($date->subminutes(5) <= $code->codigo_created_at){
-                        if(DB::table('codigo_utilidads')->where('user_id', $code->user_id)->where('codigo', $code->codigo)->update(['codigo_verified_at' => Carbon::now()])){
-                            return true;
+                        if($utilidad === $code->funcion){
+                            if($date->subminutes(5) <= $code->codigo_created_at){
+                            if(DB::table('codigo_utilidads')->where('user_id', $code->user_id)->where('codigo', $code->codigo)->update(['codigo_verified_at' => Carbon::now()])){
+                                return true;
+                            }
+                            else{
+                                return false;
+                            }
                         }
                         else{
-                            return false;
+                            return back()->with('msg', 'CADUCADO');
                         }
+                    }else{
+                        return back()->with('msg', 'CADUCADO2');
                     }
-                    else{
-                        return back()->with('msg', 'CADUCADO');
-                    }
+                    
                 }
             }
         }
@@ -143,7 +148,7 @@ class DiscoController extends Controller
        if(Auth::user()->area < 2){
           $codigoS = $request->codigoS;
 
-          if(self::ValidaCodigoUtilidad($codigoS) === true){
+          if(self::ValidaCodigoUtilidad($codigoS, 'EDITAR') === true){
              $disco = Disco::findOrFail($id);
              $disco->nombre = $request->nombre;
              $disco->cantante = $request->cantante;
@@ -212,7 +217,7 @@ class DiscoController extends Controller
         if(Auth::user()->area <= 2){
             $codigoS = $request->codigoS;
   
-            if(self::ValidaCodigoUtilidad($codigoS) === true){
+            if(self::ValidaCodigoUtilidad($codigoS, 'ELIMINAR') === true){
                 $disco = Disco::findOrFail($id);
                 $disco->delete();
 
